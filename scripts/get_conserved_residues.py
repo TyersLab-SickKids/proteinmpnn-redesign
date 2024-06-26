@@ -13,9 +13,8 @@ import sys
 import pandas as pd
 from pathlib import Path
 
-name = sys.argv[1]
-input_msa = sys.argv[2]
-output_dir = sys.argv[3]
+input_msa = sys.argv[1]
+output_dir = sys.argv[2]
 
 def parse_msa(msa_file):
     sequences = []
