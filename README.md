@@ -7,7 +7,8 @@ Steps:
 3. Redesign using ProteinMPNN
 4. Validate using AlphaFold2
 
-# TEVd (control, from [Sumida et al.](https://pubs.acs.org/doi/10.1021/jacs.3c10941))
+# TEV Protease
+Control enzyme, from [Sumida et al.](https://pubs.acs.org/doi/10.1021/jacs.3c10941).
 
 ### ProteinMPNN
 
@@ -27,3 +28,13 @@ sbatch scripts/proteinmpnn.sh inputs/1lvm_top30.pdb A inputs/top30.jsonl 8 outpu
 sbatch scripts/proteinmpnn.sh inputs/1lvm_top50.pdb A inputs/top50.jsonl 16 outputs/TEVd/
 sbatch scripts/proteinmpnn.sh inputs/1lvm_top70.pdb A inputs/top70.jsonl 16 outputs/TEVd/
 ```
+
+### Parse FASTA
+
+ProteinMPNN outputs all sequences into a single FASTA file, but AlphaFold2 requires each sequence to be in a separate file with a unique basename. To parse a FASTA file into individual files for each sequence:
+
+```
+bash scripts/parse_fasta.sh <INPUT_FASTA> <OUTPUT_DIR>
+```
+
+Output FASTAs will be named according to input FASTA name, temperature, and sample number. One will be the original sequence.
