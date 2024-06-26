@@ -7,13 +7,13 @@
 # $1. input .fasta
 # $2. output dir
 
-input_fasta=~/proteinmpnn-redesign/outputs/1lvm/seqs/1lvm_top70.fa
-output_dir=~/proteinmpnn-redesign/outputs/1lvm/
+input_fasta=$1
+output_dir=$2
 
 name=$(basename -- "$input_fasta")
 name="${name%.*}"
 
-mkdir -p $output_dir/mpnn/
+mkdir -p $output_dir/proteinmpnn/
 
 echo Parsing $name FASTA...
 
@@ -25,7 +25,7 @@ while IFS= read -r line; do
         
         # first sequence is the original
 	if [ "$first" = true ]; then
-	    output_fasta="$output_dir/mpnn/${name}-original.fasta"
+	    output_fasta="$output_dir/proteinmpnn/${name}-original.fasta"
 	    echo "$line" > $output_fasta
 	    first=false
 	    continue
@@ -35,7 +35,7 @@ while IFS= read -r line; do
         temp=$(echo "$line" | awk -F '[=,]' '{print $2}')
         sample_num=$(echo "$line" | awk -F '[=,]' '{print $4}')
         
-        output_fasta="$output_dir/mpnn/${name}-T${temp}-${sample_num}.fasta"
+        output_fasta="$output_dir/proteinmpnn/${name}-T${temp}-${sample_num}.fasta"
 
         # Create a new fasta file with the sample number as the name
         echo "$line" > $output_fasta

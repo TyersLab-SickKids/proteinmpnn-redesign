@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### Script to run ProteinMPNN.
+### Script to run ProteinMPNN with fixed residues.
 
 set -e
 
