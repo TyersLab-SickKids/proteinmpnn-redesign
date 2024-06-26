@@ -23,10 +23,7 @@ Fix active site and evolutionarily highly conserved residues. **Cysteine** was e
 sbatch scripts/proteinmpnn.sh <INPUT_PDB> <CHAINS_TO_DESIGN> <FIXED_POSITIONS_JSONL> <NUM_SEQS_PER_TARGET> <OUTPUT_DIR>
 
 sbatch scripts/proteinmpnn.sh inputs/1lvm_active_only.pdb A inputs/active_only.jsonl 8 outputs/TEVd/
-
 sbatch scripts/proteinmpnn.sh inputs/1lvm_top30.pdb A inputs/top30.jsonl 8 outputs/TEVd/
-
 sbatch scripts/proteinmpnn.sh inputs/1lvm_top50.pdb A inputs/top50.jsonl 16 outputs/TEVd/
-
 sbatch scripts/proteinmpnn.sh inputs/1lvm_top70.pdb A inputs/top70.jsonl 16 outputs/TEVd/
 ```
