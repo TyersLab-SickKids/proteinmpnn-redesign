@@ -26,6 +26,13 @@ output_dir=$5
 echo INPUT PDB $input_pdb
 echo CHAINS TO DESIGN $chains_to_design
 echo FIXED POSITIONS $fixed_positions
+
+# ProteinMPNN doesn't check if jsonl doesn't exist
+if [ ! -f "$fixed_positions" ]; then
+    echo ERROR: $fixed_positions not found, exiting.
+    exit
+fi
+
 echo SEQ PER TARGET $seq_per_target
 echo OUTPUT DIR $output_dir
 
