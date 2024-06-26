@@ -4,7 +4,7 @@ Get the most conserved residues from the MSA.
 Outputs the residues in order from most to least conserved.
 
 argv[1]: input msa fasta
-argv[3]: output_dir
+argv[2]: output_dir
 
 """
 
