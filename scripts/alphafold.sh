@@ -4,16 +4,27 @@ set -e
 
 repo_dir=/hpf/tools/centos7/alphafold/2.3.2/
 
-output_dir=~/proteinmpnn-redesign/outputs/1lvm/
+input_dir=~/proteinmpnn-redesign/outputs/TEVd/proteinmpnn/
+output_dir=~/proteinmpnn-redesign/outputs/TEVd/
 
 echo Loading module...
 
 module load alphafold/2.3.2
 
+echo Getting input FASTAs..
+
+fasta_paths=""
+
+for filename in $input_dir/*.fasta; do
+    fasta_paths+=$(realpath "$filename"),
+done
+
+echo $fasta_paths
+
 echo Running script...
 
 alphafold --output_dir=$output_dir/af2/ \
-	--fasta_paths=$output_dir/mpnn/1lvm_active_only-original.fasta \
+	--fasta_paths=$fasta_paths \
 	--data_dir=$repo_dir/data/ \
 	--max_template_date=2024-01-01 \
 	--uniref90_database_path=$repo_dir/data/uniref90/uniref90.fasta \
