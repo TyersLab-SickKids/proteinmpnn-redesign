@@ -5,6 +5,7 @@
 # Required arguments:
 # $1: output AF2 directory
 # $2: original PDB (to calculate Calpha RMSD)
+# $3: output dir
 
 af2_dir=$1
 original_pdb=$2
