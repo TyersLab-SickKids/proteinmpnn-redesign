@@ -4,8 +4,8 @@ set -e
 
 repo_dir=/hpf/tools/centos7/alphafold/2.3.2/
 
-input_dir=~/proteinmpnn-redesign/outputs/TEVd/proteinmpnn/
-output_dir=~/proteinmpnn-redesign/outputs/TEVd/
+input_dir=$1
+output_dir=$2
 
 echo Loading module...
 
