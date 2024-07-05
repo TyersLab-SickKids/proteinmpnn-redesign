@@ -24,7 +24,7 @@ for dir in $af2_dir/*; do
 	if [ -f "$pkl_file" ] && [ -f "$af2_pdb" ]; then
 		echo $(basename $dir)
 		
-		plddt=$(python extract_af2_scores.py $pkl_file)
+		plddt=$(python calculate_plddt.py $pkl_file)
 		calpha_rmsd=$(python calculate_rmsd.py "$original_pdb" "$af2_pdb")
 	
 		pass_plddt=$(echo "$plddt > 85" |bc -l)
