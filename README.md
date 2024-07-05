@@ -64,3 +64,19 @@ Output FASTAs will be named according to input FASTA name, temperature, and samp
 ### AlphaFold2
 
 Model 3, 6 recycles. MSA of the parent sequence was used for all designs.
+
+Using regular AlphaFold2 with all five models, 3 recycles, and each respective design their own MSA:
+```
+sbatch scripts/af2.sh <INPUT_DIR> <OUTPUT_DIR>
+```
+where `<INPUT_DIR>` is the output of the previous Parse FASTA step.
+
+To calculate and consolidate the scores:
+```
+# enter compute node
+srun --pty bash -l
+module load python/3.11.3
+
+bash scripts/filter_scores.sh <AF2_OUTPUT_DIR> <ORIGINAL_PDB> <OUTPUT_DIR>
+```
+Where `filter_scores.sh` calls `calculate_plddt.py` and `calculate_rmsd.py`.
