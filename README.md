@@ -63,7 +63,7 @@ Output FASTAs will be named according to input FASTA name, temperature, and samp
 
 ### AlphaFold2
 
-Model 3, 6 recycles. MSA of the parent sequence was used for all designs.
+Model 3, 6 recycles. Structural templating and MSA of the parent sequence was used for all designs.
 
 Using regular AlphaFold2 with all five models, 3 recycles, and each respective design their own MSA:
 ```
