@@ -14,6 +14,9 @@ Control enzyme, from [Sumida et al.](https://pubs.acs.org/doi/10.1021/jacs.3c109
 Fix residues containing:
 * **Backbone** atoms within **7** angstroms of the substrate, or
 * **Sidechain** atoms within **6** angstroms of the substrate
+```
+python scripts/bindingsite_selection <target_pdb> <ligand_pdb> <output_file_name> <chain> <output_dir>
+```
 
 ### Evolutionarily Conserved Residues
 Determined through Multiple Sequence Alignment (MSA) with four iterative [HHblits](https://toolkit.tuebingen.mpg.de/tools/hhblits) searches against the UniRef30 database. Final result filtered with [HHfilter](https://toolkit.tuebingen.mpg.de/tools/hhfilter).
@@ -42,6 +45,7 @@ Fix active site and evolutionarily highly conserved residues. **Cysteine** was e
 * 16 x 3 = **48** sequences generated with the active site and **70%** most highly conserved positions fixed
 
 **Note:** The ProteinMPNN output file follows the name of the input PDB. All 1lvm PDBs below are identical, just copied and renamed to reflect the fixed positions of each run. Thus, the input PDB name MUST be unique.
+**Note:** Pdbs used in proteinMPNN must start at residue index 0 (Scripts included to adjust residue numbers)
 ```
 sbatch scripts/proteinmpnn.sh <INPUT_PDB> <CHAINS_TO_DESIGN> <FIXED_POSITIONS_JSONL> <NUM_SEQS_PER_TARGET> <OUTPUT_DIR>
 
