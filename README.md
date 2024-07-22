@@ -71,7 +71,7 @@ Model 3, 6 recycles. Structural templating and MSA of the parent sequence was us
 
 Using regular AlphaFold2 with all five models, 3 recycles, and each respective design their own MSA:
 ```
-sbatch --mem 64G -G 1 scripts/alphafold.sh <INPUT_DIR> <OUTPUT_DIR>
+sbatch --time=10:00:00 --tmp=64G --mem=64G -G 1 scripts/alphafold.sh <INPUT_DIR> <OUTPUT_DIR>
 ```
 where `<INPUT_DIR>` is the output of the previous Parse FASTA step.
 
