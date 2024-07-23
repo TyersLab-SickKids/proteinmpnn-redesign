@@ -7,9 +7,13 @@ Implementation of the ProteinMPNN redesign approach by [Sumida et al.](https://p
 3. Redesign using ProteinMPNN
 4. Validate using AlphaFold2
 
-# TEV Protease
+# Examples Pipeline Has been conducted on
+### TEV Protease
 Control enzyme, from [Sumida et al.](https://pubs.acs.org/doi/10.1021/jacs.3c10941).
+### PETase
+Target of interest, see [Han et al.](https://www.nature.com/articles/s41467-017-02255-z).
 
+# Pipeline
 ### Active Site Residues
 Fix residues containing:
 * **Backbone** atoms within **7** angstroms of the substrate, or
