@@ -73,7 +73,7 @@ Output FASTAs will be named according to input FASTA name, temperature, and samp
 
 Model 3, 6 recycles. Structural templating and MSA of the parent sequence was used for all designs.
 
-Using regular AlphaFold2 with all five models, 3 recycles, and each respective design their own MSA:
+Using regular AlphaFold2 with all five models, 3 recycles, database template search and each respective design their own MSA:
 ```
 sbatch --time=10:00:00 --tmp=64G --mem=64G -G 1 scripts/alphafold.sh <INPUT_DIR> <OUTPUT_DIR>
 ```
