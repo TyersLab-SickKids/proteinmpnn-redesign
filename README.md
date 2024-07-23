@@ -23,12 +23,12 @@ python scripts/bindingsite_selection <target_pdb> <ligand_pdb> <output_file_name
 ```
 
 ### Evolutionarily Conserved Residues
-Determined through Multiple Sequence Alignment (MSA) with four iterative [HHblits](https://toolkit.tuebingen.mpg.de/tools/hhblits) searches against the UniRef30 database. Final result filtered with [HHfilter](https://toolkit.tuebingen.mpg.de/tools/hhfilter).
+Determined through Multiple Sequence Alignment (MSA) with four iterative [HHblits](https://toolkit.tuebingen.mpg.de/tools/hhblits) searches against the UniRef30 database. Final result filtered with [HHfilter](https://toolkit.tuebingen.mpg.de/tools/hhfilter). If not specified the paramters in HHBlits were left standard
 1. HHBlits template sequence with E = **1e-50**
-2. Forward to HHblits with E = **1e-30**
-3. Forward to HHblits with E = **1e-10**
-4. Forward to HHblits with E = **1e-4**
-5. Copy Query MSA to HHfilter with Maximal Sequence Identity = **90%**, Minimal Sequence Identity = **30%**, Minimal Coverage = **50%**
+2. Forward A3M to HHblits with E = **1e-30**
+3. Forward A3M to HHblits with E = **1e-10**
+4. Forward A3M to HHblits with E = **1e-4**
+5. Copy Query MSA (dowload) to HHfilter (upload) with Maximal Sequence Identity = **90%**, Minimal Sequence Identity = **30%**, Minimal Coverage = **50%**
 6. Rank the residues by their most frequent amino acid frequencies
 ```
 python scripts/get_conserved_residues.py <hhfilter_output_msa_fasta> <output_dir>
