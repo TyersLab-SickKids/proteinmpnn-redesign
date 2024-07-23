@@ -7,7 +7,7 @@ Implementation of the ProteinMPNN redesign approach by [Sumida et al.](https://p
 3. Redesign using ProteinMPNN
 4. Validate using AlphaFold2
 
-# Examples Pipeline Has been conducted on
+# Targets of Interest
 ### TEV Protease
 Control enzyme, from [Sumida et al.](https://pubs.acs.org/doi/10.1021/jacs.3c10941).
 ### PETase
