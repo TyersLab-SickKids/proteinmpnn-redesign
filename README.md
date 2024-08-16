@@ -24,7 +24,7 @@ python scripts/bindingsite_selection <target_pdb> <ligand_pdb> <output_file_name
 
 ### Evolutionarily Conserved Residues
 Determined through Multiple Sequence Alignment (MSA) with four iterative [HHblits](https://toolkit.tuebingen.mpg.de/tools/hhblits) searches against the UniRef30 database. Final result filtered with [HHfilter](https://toolkit.tuebingen.mpg.de/tools/hhfilter). If not specified the paramters in HHBlits were left standard
-1. HHBlits template sequence with E = **1e-50**
+1. HHBlits template sequence with E = **1e-50** set max target hits to 10000
 2. Forward A3M to HHblits with E = **1e-30**
 3. Forward A3M to HHblits with E = **1e-10**
 4. Forward A3M to HHblits with E = **1e-4**
