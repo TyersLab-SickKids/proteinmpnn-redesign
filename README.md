@@ -28,8 +28,8 @@ Determined through Multiple Sequence Alignment (MSA) with four iterative [HHblit
 2. Forward A3M to HHblits with E = **1e-30**
 3. Forward A3M to HHblits with E = **1e-10**
 4. Forward A3M to HHblits with E = **1e-4**
-5. Copy Query MSA (dowload) to HHfilter (upload) with Maximal Sequence Identity = **90%**, Minimal Sequence Identity = **30%**, Minimal Coverage = **50%**
-6. Rank the residues by their most frequent amino acid frequencies
+5. Copy Query MSA (dowload full a3m) to HHfilter (upload the same a3m) with Maximal Sequence Identity = **90%**, Minimal Sequence Identity = **30%**, Minimal Coverage = **50%**
+6. Rank the residues by their most frequent amino acid frequencies (download the MSA from HHFilter step)
 ```
 python scripts/get_conserved_residues.py <hhfilter_output_msa_fasta> <output_dir>
 ```
