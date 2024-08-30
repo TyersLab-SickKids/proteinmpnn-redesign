@@ -79,6 +79,10 @@ sbatch --time=10:00:00 --tmp=64G --mem=64G -G 1 scripts/alphafold.sh <INPUT_DIR>
 ```
 where `<INPUT_DIR>` is the output of the previous Parse FASTA step.
 
+To use a modified verison of alphafold with Model 3, 6 recycles
+```
+sbatch --time=10:00:00 --tmp=64G --mem=64G -G 1 scripts/alphafold_v2.sh <INPUT_DIR> <OUTPUT_DIR>
+```
 To calculate and consolidate the scores:
 ```
 # enter compute node
