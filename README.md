@@ -19,8 +19,10 @@ Fix residues containing:
 * **Backbone** atoms within **7** angstroms of the substrate, or
 * **Sidechain** atoms within **6** angstroms of the substrate
 ```
-python scripts/bindingsite_selection <target_pdb> <ligand_pdb> <output_file_name> <chain> <output_dir>
+python scripts/bindingsite_selection.py <target_pdb> <ligand_pdb> <output_file_name> <chain> <output_dir>
 ```
+
+**IMPORTANT NOTE:** The target PDB **MUST** start at residue index 1 and not have any discontinuities. This is because when fixing residues in ProteinMPNN, ProteinMPNN considers "residue 1" as the "1st residue" and not "the residue with index 1".
 
 ### Evolutionarily Conserved Residues
 Determined through Multiple Sequence Alignment (MSA) with four iterative [HHblits](https://toolkit.tuebingen.mpg.de/tools/hhblits) searches against the UniRef30 database. Final result filtered with [HHfilter](https://toolkit.tuebingen.mpg.de/tools/hhfilter). If not specified the paramters in HHBlits were left standard
@@ -49,7 +51,6 @@ Fix active site and evolutionarily highly conserved residues. **Cysteine** was e
 * 16 x 3 = **48** sequences generated with the active site and **70%** most highly conserved positions fixed
 
 **Note:** The ProteinMPNN output file follows the name of the input PDB. All 1lvm PDBs below are identical, just copied and renamed to reflect the fixed positions of each run. Thus, the input PDB name MUST be unique.
-**Note:** Pdbs used in proteinMPNN must start at residue index 0 (Scripts included to adjust residue numbers)
 ```
 sbatch scripts/proteinmpnn.sh <INPUT_PDB> <CHAINS_TO_DESIGN> <FIXED_POSITIONS_JSONL> <NUM_SEQS_PER_TARGET> <OUTPUT_DIR>
 
