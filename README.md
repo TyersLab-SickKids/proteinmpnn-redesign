@@ -94,7 +94,7 @@ bash scripts/filter_scores.sh <AF2_OUTPUT_DIR> <ORIGINAL_PDB> <OUTPUT_DIR>
 ```
 Where `filter_scores.sh` calls `calculate_plddt.py` ~~and `calculate_rmsd.py`~~.
 
-**UPDATE:** We recommend manually calculating the Calpha RMSD in PyMol. Do not use the RMSD column in the output scores file, it has not been validated. To calculate RMSD in PyMol:
+**UPDATE:** We recommend manually calculating the Calpha RMSD in PyMOL. Do not use the RMSD column in the output scores file; it has not been validated. To calculate RMSD in PyMOL:
 
 ```
 align <af2_predicted_structure> and name CA, <original_pdb> and name CA
