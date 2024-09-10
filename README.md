@@ -92,4 +92,13 @@ module load python/3.11.3
 
 bash scripts/filter_scores.sh <AF2_OUTPUT_DIR> <ORIGINAL_PDB> <OUTPUT_DIR>
 ```
-Where `filter_scores.sh` calls `calculate_plddt.py` and `calculate_rmsd.py`.
+Where `filter_scores.sh` calls `calculate_plddt.py` ~~and `calculate_rmsd.py`~~.
+
+**UPDATE:** We recommend manually calculating the Calpha RMSD in PyMol. Do not use the RMSD column in the output scores file, it has not been validated. To calculate RMSD in PyMol:
+
+```
+align <af2_predicted_structure> and name CA, <original_pdb> and name CA
+```
+
+### Success
+A successful sequence is defined as pLDDT > 85.0 and Calpha RMSD < 2.0 Angstrom.
